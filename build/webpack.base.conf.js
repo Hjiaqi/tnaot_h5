@@ -13,7 +13,7 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js',
+    app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -66,9 +66,9 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$ /,
-        loaders: ["style", "css", "sass"]
-      },
+			  test: /\.sass$/,
+			  loaders: ['style', 'css', 'sass']
+			}
     ]
   },
   node: {

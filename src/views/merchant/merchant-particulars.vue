@@ -35,21 +35,14 @@
 	    		<p>电话：1101234</p>
 	    		<p>facebook：1001234</p>
     		</div>
-    		
     	</div>
-    	
-    	
-    	
-	</div>
-	
-    
+	</div> 
 </div>
 </template>
 
 <script>
 import banner from "../../components/common/banner.vue";
 import detailHeader from "../../components/common/detail-header.vue";
-import Swiper from "swiper";
 export default {
     data() {
         return {

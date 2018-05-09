@@ -19,7 +19,7 @@ Vue.use(Router)
 
 
 export default new Router({
-  mode: 'history',
+//mode: 'history',
   scrollBehavior (to, from, savedPosition) {
   return { x: 0, y: 0 }
   },
@@ -56,7 +56,7 @@ export default new Router({
     },
 	
 	//商家列表
-	{
+		{
       path: '/typesList/:id',
       name: 'typesList',
       component: typesList

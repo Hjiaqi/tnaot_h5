@@ -3,14 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-//引入vuex
 import store from './store'// vuex
 
-//加载mint-ui
-import Mint from 'mint-ui';
-
-//加载mint-ui样式
-import "mint-ui/lib/style.css"
 
 //引入基础css文件
 import "./assets/css/common.css";
@@ -23,8 +17,12 @@ import "./assets/js/flexible.js"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
-Vue.use(Mint);
+//加载mint-ui
+import Mint from 'mint-ui';
+import "mint-ui/lib/style.css"
+
 Vue.use(VueAwesomeSwiper);
+Vue.use(Mint);
 
 
 /* eslint-disable no-new */

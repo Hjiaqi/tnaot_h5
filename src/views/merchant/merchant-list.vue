@@ -54,6 +54,7 @@
 			<div class="recommend">
 				<p class="rec_title">精品推荐</p>
 				<list-view></list-view>
+				<list-view></list-view>
 			</div>
 			<!-- 底部提示 -->
 			<div class="bottomLoad" v-if="contentJson.length > 0">
@@ -69,7 +70,6 @@
 	import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 	import banner from "../../components/common/banner.vue";
 	import listView from "./children/list-view.vue";
-	import Swiper from "swiper";
 	// 引入mint-ui 上下拉刷新组件
 	import { Loadmore, InfiniteScroll } from 'mint-ui';
 

@@ -80,4 +80,3 @@ export default {
 	pointer-events:none;
 }
 </style>
-
