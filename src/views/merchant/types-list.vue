@@ -1,6 +1,6 @@
 <template>
 <div class="types-list">
-	<detail-header v-bind:title="Text"></detail-header>
+	<detail-header v-bind:title="headerText"></detail-header>
 	<div class="list-box">
 		<list-view></list-view>
 	</div>
@@ -14,7 +14,6 @@ import detailHeader from "../../components/common/detail-header.vue";
 export default {
     data() {
         return {
-        	Text: '美食'//头部文字
         };
     },
     components: {
@@ -25,15 +24,6 @@ export default {
     	...mapState('merchant', [
             'headerText'
         ]),
-    },
-    mounted() {
-    },
-    watch: {
-    	headerText(){
-    		this.Text = this.headerText;
-    	}
-    },
-    methods: {
     }
 };
 </script>
