@@ -66,7 +66,7 @@ export default {
     },
     methods: {
     	toParticulars(id) {
-    		this.$router.push('/merParticulars/'+id);
+    		this.$router.push('/typesList/merParticulars/'+id);
     	}
     }
 };

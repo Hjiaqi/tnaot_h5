@@ -11,7 +11,6 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import './assets/css/transition.css'
 export default {
     name: 'App',
     data(){
@@ -55,7 +54,7 @@ export default {
     height: 100%;
     overflow: hidden;
     .child-view {
-        transition: all .3s ease;
+        transition: all .4s ease;
     }
 }
 
@@ -66,16 +65,8 @@ export default {
 .slide-left-leave-active,.slide-right-enter {
     transform: translate3d(-100%, 0, 0);
 }
-.toggleSide-enter,.toggleSide-leave-active{
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-}
-.toggleSide-enter-active，.toggleSide-leave{
-    -webkit-transform: translate3d(0, 0%, 0);
-    transform: translate3d(0, 0%, 0);
-}
 /*动画效果*/
-.fadeIn-enter-active {
+/*.fadeIn-enter-active {
     animation: fadeInRight .3s ease;
 }
 .fadeIn-leave-active {
@@ -83,21 +74,24 @@ export default {
 }
 @keyframes fadeInRight {
   from {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+		visibility: visible
   }
   to {
-    opacity: 1;
-    transform: none;
+    -webkit-transform: translateZ(0);
+		transform: translateZ(0)
   }
 }
 @keyframes fadeOutRight {
   from {
-    opacity: 1;
+    -webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+		visibility: visible
   }
   to {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translateZ(0);
+		transform: translateZ(0)
   }
 }
 @keyframes zoomIn {
@@ -109,7 +103,7 @@ export default {
     50% {
         opacity: 1;
     }
-}
+}*/
 
 
 /*夜间模式样式*/

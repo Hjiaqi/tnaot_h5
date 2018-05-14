@@ -1,27 +1,30 @@
 <template>
-    <div id="index">
-    	<!--头部-->
-    	<index-header></index-header>
-    	<!--内容区-->
-        <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
-		    <swiper-slide>
-		    	<live-shoplist></live-shoplist>
-		    </swiper-slide>
-		    <swiper-slide>
-		    	<DiscountsList></DiscountsList>
-		    </swiper-slide>
-		    <swiper-slide>
-		    	<cecruit-list></cecruit-list>
-		    </swiper-slide>
-		    <swiper-slide>
-		    	 <merchant-list></merchant-list>
-		    </swiper-slide>
-		</swiper>
-        
-        
-        
-        <share-box></share-box>
-    </div>
+	<div class="index-box">
+		<div id="index">
+	    	<!--头部-->
+	    	<index-header></index-header>
+	    	<!--内容区-->
+	        <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
+			    <swiper-slide>
+			    	<live-shoplist></live-shoplist>
+			    </swiper-slide>
+			    <swiper-slide>
+			    	<DiscountsList></DiscountsList>
+			    </swiper-slide>
+			    <swiper-slide>
+			    	<cecruit-list></cecruit-list>
+			    </swiper-slide>
+			    <swiper-slide>
+			    	 <merchant-list></merchant-list>
+			    </swiper-slide>
+			</swiper>
+	        
+	        
+	        
+	        <share-box></share-box>
+	    </div>
+	</div>
+    
 </template>
 <script>
 // 引用list组件
@@ -85,6 +88,13 @@ export default {
 };
 </script>
 <style scoped lang="scss">
+.index-box{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+    top: 0;
+    left: 0;
+}
 	#index{
 		position: relative;
 	    width: 100%;

@@ -73,7 +73,7 @@ mode: 'history',
     },
     //商家详情
     {
-      path: '/merParticulars/:id',
+      path: '/typesList/merParticulars/:id',
       name: 'merParticulars',
       component: merParticulars
     },
