@@ -54,18 +54,6 @@ export default {
     	banner
     },
     mounted() {
-    	//初始化banner图片轮播
-    	var self = this;
-        var bannerSwiper = new Swiper(".swiper-banner", {
-            autoplay: true,
-            loop:true,
-            autoplay:{
-            	disableOnInteraction:false
-            },
-            pagination: {
-			    el: '.swiper-pagination'
-			},
-        });
     },
     methods: {
     }
@@ -74,6 +62,9 @@ export default {
 
 <style scoped lang="scss">
 .mer-par{	
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	.mer-par-content{
 		margin-top: 90px;
 		.mer-content{

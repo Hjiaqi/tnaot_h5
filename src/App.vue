@@ -1,9 +1,9 @@
 <template>
   <div id="app" :class="{'nighttime':nighttime}">
   	<div :class="{'shade':nighttime}"></div>
-  	<transition>
+  	<transition :name='transitionName'>
         <keep-alive exclude='liveDetail'>
-            <router-view/>
+            <router-view class='child-view'/>
         </keep-alive>
     </transition>
   </div>
@@ -11,12 +11,21 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
+import './assets/css/transition.css'
 export default {
     name: 'App',
     data(){
       return {
+      	transitionName: ''
       }
     },
+    watch: {
+		  '$route' (to, from) {
+		    const toDepth = to.path.split('/').length
+		    const fromDepth = from.path.split('/').length
+		    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+		  }
+		},
     mounted() {
     	//在获取日/夜间模式之后改变状态
     	this.getpattern(false);
@@ -31,6 +40,7 @@ export default {
 			...mapMutations('commom', [
 	        'set_nighttime'
 	    ]),
+	    //切换日/夜间模式
 	    getpattern(type) {
 	    	this.set_nighttime(type)
 	    }
@@ -44,6 +54,61 @@ export default {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    .child-view {
+        transition: all .3s ease;
+    }
+}
+
+/*过度效果*/
+.slide-left-enter,.slide-right-leave-active {
+    transform: translate3d(100%, 0, 0);
+}
+.slide-left-leave-active,.slide-right-enter {
+    transform: translate3d(-100%, 0, 0);
+}
+.toggleSide-enter,.toggleSide-leave-active{
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+.toggleSide-enter-active，.toggleSide-leave{
+    -webkit-transform: translate3d(0, 0%, 0);
+    transform: translate3d(0, 0%, 0);
+}
+/*动画效果*/
+.fadeIn-enter-active {
+    animation: fadeInRight .3s ease;
+}
+.fadeIn-leave-active {
+    animation: fadeOutRight .3s ease;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3);
+        }
+    50% {
+        opacity: 1;
+    }
 }
 
 

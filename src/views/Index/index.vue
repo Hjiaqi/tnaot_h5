@@ -30,6 +30,7 @@ import liveShoplist from "../second-shop/live-shoplist.vue";
 import DiscountsList from "../discounts/discounts-list.vue";
 import cecruitList from "../recruit/recruit-list.vue"; 
 import merchantList from "../merchant/merchant-list.vue";
+
 import shareBox from "../../components/common/share-box.vue";
 import { mapState, mapGetters, mapMutations } from 'vuex'
 export default {

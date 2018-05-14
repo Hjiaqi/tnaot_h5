@@ -30,6 +30,9 @@ export default {
 
 <style lang="scss">
 .types-list{
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 	.list-box{
 		margin-top: 90px;
 		.item-img{

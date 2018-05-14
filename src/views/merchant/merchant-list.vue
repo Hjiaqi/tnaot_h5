@@ -55,6 +55,8 @@
 				<p class="rec_title">精品推荐</p>
 				<list-view></list-view>
 				<list-view></list-view>
+				<list-view></list-view>
+				<list-view></list-view>
 			</div>
 			<!-- 底部提示 -->
 			<div class="bottomLoad" v-if="contentJson.length > 0">
@@ -77,7 +79,6 @@
 		data() {
 			return {
 				receptionMSG: false, //是否接收广播状态
-
 				topStatus: '', // 下拉状态
 				bottomLock: false, // 上滑开关
 				bottomLoading: true, // 底部loading
@@ -89,7 +90,8 @@
 			banner,
 			listView
 		},
-		mounted() {},
+		mounted() {
+		},
 		computed: {
 			...mapState('commom', [
 				'popUp',
@@ -129,7 +131,6 @@
 					let arr1 = [3, 3, 4, 5, 6, 7, 8, 99, 9, 0, 2];
 					this.contentJson.push(arr1);
 					this.bottomLock = false; // 上滑开关
-					console.log('aaa');
 				}, 1000);
 				// alert(1);
 				console.log(this.contentJson);
@@ -146,11 +147,11 @@
 			handleLocaltion(type) {
 				if(type === 'get') {
 					this.$nextTick(() => {
-						document.querySelector(".DisContainer").scrollTop = sessionStorage.getItem('disScrollTop');
+						document.querySelector(".merchant").scrollTop = sessionStorage.getItem('merScrollTop');
 					})
 				} else if(type === 'set') {
-					let scrollTop = document.querySelector(".DisContainer").scrollTop;
-					sessionStorage.setItem('disScrollTop', scrollTop);
+					let scrollTop = document.querySelector(".merchant").scrollTop;
+					sessionStorage.setItem('merScrollTop', scrollTop);
 				}
 			},
 			saveScroll() {

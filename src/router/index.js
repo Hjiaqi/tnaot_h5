@@ -15,6 +15,9 @@ import recruitDetail from '@/views/recruit/recruitDetail.vue'
 import typesList from '@/views/merchant/types-list.vue'
 import merParticulars from '@/views/merchant/merchant-particulars.vue'
 
+
+import search from '@/views/search/search.vue'
+
 Vue.use(Router)
 
 
@@ -31,6 +34,13 @@ mode: 'history',
       meta: {
         keepAlive: true // 需要被缓存
       }
+    },
+    
+    
+    {
+      path: '/search',
+      name: 'search',
+      component: search
     },
 
     //二手市场详情页
